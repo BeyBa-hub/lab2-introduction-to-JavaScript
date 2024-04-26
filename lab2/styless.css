@@ -1,0 +1,20 @@
+#thumbnail-container {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+.thumbnail {
+    border: 1px solid #ccc;
+    padding: 5px;
+    margin: 0 10px;
+    width: 100px; 
+    height: 100px;
+    cursor: pointer;
+}
+#main-image {
+    display: block;
+    margin: 0 auto;
+    border: 2px solid #000;
+    max-width: 80%; /* Велике зображення в центрі */
+    height: auto;
+}

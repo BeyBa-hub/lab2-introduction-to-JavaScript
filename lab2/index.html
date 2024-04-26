@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<link rel="stylesheet" href="styless.css">
+		<title>Image Viewer</title>
+	</head>
+	<body>
+
+	<div id="thumbnail-container">
+		<!-- Тут будуть іконки -->
+	</div>
+
+	<img id="main-image" src="" alt="Selected Image" />
+
+	<script>
+
+		var imageFiles = ['file1.gif', 'file2.jpg', 'file3.gif'];
+
+		// Контейнер для іконок
+		var thumbnailContainer = document.getElementById('thumbnail-container');
+
+		// Головне зображення, яке буде змінюватися
+		var mainImage = document.getElementById('main-image');
+
+		// Функція для відображення іконок
+		function createThumbnails(imageArray) {
+			imageArray.forEach(function(image, index) {
+				var img = document.createElement('img');
+				img.src = image;
+				img.alt = 'Thumbnail ' + index;
+				img.className = 'thumbnail';
+
+				// Додавання події при натисканні на іконку
+				img.addEventListener('click', function() {
+					mainImage.src = image; // Встановлюємо велике зображення
+				});
+
+				// Додавання іконки до контейнера
+				thumbnailContainer.appendChild(img);
+			});
+		}
+
+		// Відображення іконок на сторінці
+		createThumbnails(imageFiles);
+
+		// Початкове велике зображення
+		mainImage.src = imageFiles[0]; // Починаємо з першого зображення
+	</script>
+
+	</body>
+</html>
